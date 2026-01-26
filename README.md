@@ -5,11 +5,15 @@ To run the program (assuming your ide or text editor is on the repo's file):
 In a terminal, run the backend file using these commands:
 
 cd backend 
+
 npm install
+
 npm start
 
 In another terminal, run the frontend using the same files
 
-cd frontend                              
+cd frontend  
+
 npm install
+
 npm start
