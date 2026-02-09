@@ -8,13 +8,14 @@ const server = http.createServer(app);
 
 app.use(cors()); //initialise CORS middleware
 
-// Initialize Socket.io with CORS settings
+// Initialize Socket.io with CORS settings and allow all origins
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000", // React default port
+    origin: "*", 
     methods: ["GET", "POST"]
   }
 });
+
 
 
 const activeUsers = new Map();
@@ -65,6 +66,6 @@ io.on('connection', (socket) => {
 
 // Start server
 const PORT = 3001;
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () =>{
   console.log(`Server running on port ${PORT}`);
 });
